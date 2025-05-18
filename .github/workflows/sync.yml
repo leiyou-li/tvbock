@@ -7,6 +7,10 @@ on:
   # 允许手动触发
   workflow_dispatch:
 
+# 添加权限配置
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -21,25 +25,53 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
+          git config --global --add safe.directory /github/workspace
+
+      - name: Debug - Show current directory
+        run: |
+          pwd
+          ls -la
 
       - name: Add source repository as remote
         run: |
           git remote add source https://github.com/ls125781003/tvboxtg.git
+          git remote -v
           git fetch source
+
+      - name: Debug - Show branches
+        run: |
+          git branch -a
+          git log --oneline -n 5
 
       - name: Sync changes
         run: |
           # 获取源仓库的最新提交
           git fetch source main
           
-          # 重置到源仓库的状态
+          # 显示当前状态
+          echo "Current status before sync:"
+          git status
+          
+          # 强制更新到源仓库的状态
           git reset --hard source/main
+          
+          # 显示更新后的状态
+          echo "Status after sync:"
+          git status
           
           # 如果有更改，则提交并推送
           if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Changes detected, committing and pushing..."
             git add .
             git commit -m "Sync: Update from source repository [skip ci]"
-            git push origin main
+            git push -f origin main
+            echo "Changes pushed successfully"
           else
             echo "No changes to sync"
-          fi 
+          fi
+
+      - name: Debug - Show final status
+        run: |
+          echo "Final repository status:"
+          git status
+          git log --oneline -n 5 
