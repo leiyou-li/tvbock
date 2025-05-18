@@ -26,26 +26,40 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
 
-      - name: Download source repository
+      - name: Clean workspace
+        run: |
+          # 保留 .git 目录，删除其他所有内容
+          find . -mindepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
+
+      - name: Download and extract source repository
         run: |
           # 下载源仓库的zip文件
           curl -L https://github.com/ls125781003/tvboxtg/archive/refs/heads/main.zip -o source.zip
           # 解压文件
-          unzip source.zip
-          # 删除不需要的文件
+          unzip -q source.zip
+          # 删除zip文件
           rm source.zip
-          # 移动所有文件到当前目录
-          mv tvboxtg-main/* .
-          mv tvboxtg-main/.* . 2>/dev/null || true
+          # 移动所有文件到当前目录（包括隐藏文件）
+          cp -r tvboxtg-main/. .
           # 删除解压后的目录
           rm -rf tvboxtg-main
-          # 删除 .git 目录（如果存在）
-          rm -rf .git
+          # 显示当前目录内容
+          echo "Current directory contents:"
+          ls -la
 
       - name: Commit and push changes
         run: |
+          # 显示git状态
+          echo "Git status before commit:"
+          git status
+          
           # 添加所有文件
-          git add .
+          git add -A
+          
+          # 显示git状态
+          echo "Git status after add:"
+          git status
+          
           # 检查是否有更改
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Changes detected, committing and pushing..."
