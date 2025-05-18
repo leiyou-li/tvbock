@@ -1,29 +1,5 @@
-# TVBox TG 自动同步仓库
-
-这是一个自动同步仓库，用于同步的更新。
-
-## 同步机制
-
-- 使用 GitHub Actions 自动同步
-- 每6小时自动检查一次更新
-- 支持手动触发同步
-- 自动提交并推送更新
-
-## 注意事项
-
-- 本仓库仅用于学习和研究目的
-- 所有内容均来自源仓库
-- 请在使用后24小时内删除相关内容
-
-## 手动触发同步
-
-如果需要立即同步更新，可以：
-
-1. 进入仓库的 Actions 标签页
-2. 选择 "Sync Repository" 工作流
-3. 点击 "Run workflow" 按钮
-4. 选择分支后点击 "Run workflow" 确认
-
-## 许可证
-
-本仓库仅用于学习目的，请遵守源仓库的相关规定。 
+# tvboxtg
+#
+整体更新25.05.16
+# 
+The resources are sourced from the internet and are only used for learning purposes. Please delete them yourself 24 hours after using them for learning.
