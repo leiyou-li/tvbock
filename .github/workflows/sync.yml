@@ -25,53 +25,33 @@ jobs:
         run: |
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
-          git config --global --add safe.directory /github/workspace
 
-      - name: Debug - Show current directory
+      - name: Download source repository
         run: |
-          pwd
-          ls -la
+          # 下载源仓库的zip文件
+          curl -L https://github.com/ls125781003/tvboxtg/archive/refs/heads/main.zip -o source.zip
+          # 解压文件
+          unzip source.zip
+          # 删除不需要的文件
+          rm source.zip
+          # 移动所有文件到当前目录
+          mv tvboxtg-main/* .
+          mv tvboxtg-main/.* . 2>/dev/null || true
+          # 删除解压后的目录
+          rm -rf tvboxtg-main
+          # 删除 .git 目录（如果存在）
+          rm -rf .git
 
-      - name: Add source repository as remote
+      - name: Commit and push changes
         run: |
-          git remote add source https://github.com/ls125781003/tvboxtg.git
-          git remote -v
-          git fetch source
-
-      - name: Debug - Show branches
-        run: |
-          git branch -a
-          git log --oneline -n 5
-
-      - name: Sync changes
-        run: |
-          # 获取源仓库的最新提交
-          git fetch source main
-          
-          # 显示当前状态
-          echo "Current status before sync:"
-          git status
-          
-          # 强制更新到源仓库的状态
-          git reset --hard source/main
-          
-          # 显示更新后的状态
-          echo "Status after sync:"
-          git status
-          
-          # 如果有更改，则提交并推送
+          # 添加所有文件
+          git add .
+          # 检查是否有更改
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Changes detected, committing and pushing..."
-            git add .
             git commit -m "Sync: Update from source repository [skip ci]"
-            git push -f origin main
+            git push origin main
             echo "Changes pushed successfully"
           else
             echo "No changes to sync"
-          fi
-
-      - name: Debug - Show final status
-        run: |
-          echo "Final repository status:"
-          git status
-          git log --oneline -n 5 
+          fi 
