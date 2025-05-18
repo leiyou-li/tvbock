@@ -26,23 +26,32 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
 
-      - name: Clean workspace
-        run: |
-          # 保留 .git 目录，删除其他所有内容
-          find . -mindepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
-
       - name: Download and extract source repository
         run: |
+          # 创建临时目录
+          mkdir -p temp_sync
+          cd temp_sync
+          
           # 下载源仓库的zip文件
           curl -L https://github.com/ls125781003/tvboxtg/archive/refs/heads/main.zip -o source.zip
           # 解压文件
           unzip -q source.zip
           # 删除zip文件
           rm source.zip
-          # 移动所有文件到当前目录（包括隐藏文件）
-          cp -r tvboxtg-main/. .
-          # 删除解压后的目录
-          rm -rf tvboxtg-main
+          
+          # 返回工作目录
+          cd ..
+          
+          # 删除当前目录下的所有文件（除了 .git 和 .github）
+          find . -mindepth 1 -maxdepth 1 -not -name '.git' -not -name '.github' -exec rm -rf {} +
+          
+          # 移动源仓库文件到当前目录
+          mv temp_sync/tvboxtg-main/* .
+          mv temp_sync/tvboxtg-main/.* . 2>/dev/null || true
+          
+          # 清理临时目录
+          rm -rf temp_sync
+          
           # 显示当前目录内容
           echo "Current directory contents:"
           ls -la
