@@ -1,0 +1,45 @@
+name: Sync Repository
+
+on:
+  schedule:
+    # 每6小时运行一次
+    - cron: '0 */6 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+
+      - name: Add source repository as remote
+        run: |
+          git remote add source https://github.com/ls125781003/tvboxtg.git
+          git fetch source
+
+      - name: Sync changes
+        run: |
+          # 获取源仓库的最新提交
+          git fetch source main
+          
+          # 重置到源仓库的状态
+          git reset --hard source/main
+          
+          # 如果有更改，则提交并推送
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git add .
+            git commit -m "Sync: Update from source repository [skip ci]"
+            git push origin main
+          else
+            echo "No changes to sync"
+          fi 
