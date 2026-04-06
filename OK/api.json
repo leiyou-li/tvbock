@@ -591,6 +591,24 @@
       "timeout": 30
     },
     {
+      "key": "我的迅雷",
+      "name": "⭐我的┃迅雷",
+      "type": 3,
+      "api": "csp_AweSomeGuard",
+      "searchable": 0,
+      "quickSearch": 0,
+      "changeable": 0,
+      "filterable": 0,
+      "indexs": 0,
+      "style": {
+        "type": "list"
+      },
+      "ext": {
+        "sp": "MyXunLei"
+      },
+      "timeout": 30
+    },
+    {
       "key": "️爱看Bot弹幕版",
       "name": "⛅️爱看┃弹幕",
       "type": 3,
