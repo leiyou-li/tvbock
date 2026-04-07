@@ -635,6 +635,7 @@
       "ext": {
         "sp": "Caiji",
         "api": "http://dyttzy5.tv/api.php/provide/vod/from/dyttm3u8/at/m3u8/",
+        "exclude": "34",
         "danmu": true
       },
       "timeout": 10
@@ -651,6 +652,7 @@
       "ext": {
         "sp": "Caiji",
         "api": "https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/at/m3u8/",
+        "exclude": "34",
         "danmu": true
       },
       "timeout": 10
