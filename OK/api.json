@@ -226,21 +226,6 @@
       "timeout": 30
     },
     {
-      "key": "七味",
-      "name": "🌈七味┃弹幕",
-      "type": 3,
-      "api": "csp_AweSomeGuard",
-      "searchable": 1,
-      "quickSearch": 1,
-      "changeable": 1,
-      "filterable": 1,
-      "ext": {
-        "sp": "QiWei",
-        "danmu": true
-      },
-      "timeout": 30
-    },
-    {
       "key": "云集",
       "name": "🍊云集┃4K弹幕",
       "type": 3,
@@ -327,6 +312,21 @@
         "sp": "Time123"
       },
       "timeout": 25
+    },
+    {
+      "key": "七味",
+      "name": "🌈七味┃弹幕",
+      "type": 3,
+      "api": "csp_AweSomeGuard",
+      "searchable": 1,
+      "quickSearch": 1,
+      "changeable": 1,
+      "filterable": 1,
+      "ext": {
+        "sp": "QiWei",
+        "danmu": true
+      },
+      "timeout": 30
     },
     {
       "key": "瓜子",
