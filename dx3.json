@@ -53,6 +53,10 @@
             "name": "newwex"
         },
         {
+            "url": "https://hk.gh-proxy.com/https://raw.githubusercontent.com/ls125781003/testboxapi/main/vox/api.json",
+            "name": "集多"
+        },
+        {
             "url": "https://hk.gh-proxy.com/https://raw.githubusercontent.com/ls125781003/testboxapi/main/py/api.json",
             "name": "py"
         },
