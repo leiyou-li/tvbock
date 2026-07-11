@@ -2,6 +2,16 @@
     "spider": "./spider.jar",
     "sites": [
         {
+            "key": "哔哩哔哩",
+            "name": "🅱️哔哩合集",
+            "type": 3,
+            "api": "csp_Bili",
+            "searchable": 1,
+            "quickSearch": 1,
+            "filterable": 1,
+            "ext": "./json/bili.json"
+        },
+        {
             "key": "csp_XYQHiker_兔小贝",
             "name": "🐰兔小贝",
             "type": 3,
@@ -42,8 +52,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/幼儿启蒙.json",
-            "jar": ""
+            "ext": "./json/幼儿启蒙.json"
         },
         {
             "key": "益智",
@@ -53,8 +62,7 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "./json/益智动画.json",
-            "jar": ""
+            "ext": "./json/益智动画.json"
         },
         {
             "key": "幼小衔接",
@@ -64,19 +72,17 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/幼小衔接.json",
-            "jar": ""
+            "ext": "./json/幼小衔接.json"
         },
         {
             "key": "小灯塔",
             "name": "🌏小灯塔",
             "type": 3,
             "api": "csp_Bili",
-            "searchable": 0,
+            "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔百科.json",
-            "jar": ""
+            "ext": "./json/小灯塔百科.json"
         },
         {
             "key": "小灯塔科学",
@@ -86,8 +92,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔科学.json",
-            "jar": ""
+            "ext": "./json/小灯塔科学.json"
         },
         {
             "key": "小灯塔地理",
@@ -97,8 +102,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔地理.json",
-            "jar": ""
+            "ext": "./json/小灯塔地理.json"
         },
         {
             "key": "小灯塔国学",
@@ -108,8 +112,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔国学.json",
-            "jar": ""
+            "ext": "./json/小灯塔国学.json"
         },
         {
             "key": "小灯塔人文",
@@ -119,8 +122,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/小灯塔人文.json",
-            "jar": ""
+            "ext": "./json/小灯塔人文.json"
         },
         {
             "key": "儿童拼音",
@@ -130,8 +132,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童拼音.json",
-            "jar": ""
+            "ext": "./json/儿童拼音.json"
         },
         {
             "key": "儿童识字",
@@ -141,8 +142,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童识字.json",
-            "jar": ""
+            "ext": "./json/儿童识字.json"
         },
         {
             "key": "儿童英语",
@@ -152,8 +152,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童英语.json",
-            "jar": ""
+            "ext": "./json/儿童英语.json"
         },
         {
             "key": "儿童硬笔",
@@ -163,8 +162,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童硬笔.json",
-            "jar": ""
+            "ext": "./json/儿童硬笔.json"
         },
         {
             "key": "儿童思维",
@@ -174,8 +172,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童思维.json",
-            "jar": ""
+            "ext": "./json/儿童思维.json"
         },
         {
             "key": "儿童口才",
@@ -185,8 +182,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童口才.json",
-            "jar": ""
+            "ext": "./json/儿童口才.json"
         },
         {
             "key": "儿童编程",
@@ -196,8 +192,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童编程.json",
-            "jar": ""
+            "ext": "./json/儿童编程.json"
         },
         {
             "key": "儿童武术",
@@ -207,19 +202,17 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/儿童武术.json",
-            "jar": ""
+            "ext": "./json/儿童武术.json"
         },
         {
             "key": "兴趣培养",
             "name": "🌏兴趣培养",
             "type": 3,
             "api": "csp_Bili",
-            "searchable": 0,
+            "searchable": 1,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/兴趣培养.json",
-            "jar": ""
+            "ext": "./json/兴趣培养.json"
         },
         {
             "key": "小学",
@@ -229,8 +222,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩小学.json",
-            "jar": ""
+            "ext": "./json/哔哩哔哩小学.json"
         },
         {
             "key": "初中",
@@ -240,8 +232,8 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩初中.json",
-            "jar": ""
+            "cookie": "http://127.0.0.1:9978/file/TVBox/bili_cookie饭.txt",
+            "ext": "./json/哔哩哔哩初中.json"
         },
         {
             "key": "高中",
@@ -251,46 +243,7 @@
             "searchable": 0,
             "quickSearch": 1,
             "filterable": 1,
-            "ext": "./json/哔哩哔哩高中.json",
-            "jar": ""
-        },
-        {
-            "key": "腾讯",
-            "name": "🎅🏻 | 少儿频道1",
-            "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/腾讯.js"
-        },
-        {
-            "key": "芒果",
-            "name": "👼🏻 | 少儿频道2",
-            "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/忙果.js"
-        },
-        {
-            "key": "奇艺",
-            "name": "🧚 | 少儿频道3",
-            "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/异兽.js"
-        },
-        {
-            "key": "优酷",
-            "name": "🧜‍| 少儿频道4",
-            "type": 3,
-            "api": "./api/drpy2.min.js",
-            "ext": "./js/优酷.js"
-        },
-        {
-            "key": "py_cctv_1",
-            "name": "🅱️央视-少儿",
-            "type": 3,
-            "api": "py_cctv",
-            "searchable": 0,
-            "quickSearch": 0,
-            "filterable": 1,
-            "ext": "./py/py_cctv_1.py"
+            "ext": "./json/哔哩哔哩高中.json"
         },
         {
             "key": "ysjd",
@@ -300,19 +253,7 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "./json/央视经典.json",
-            "jar": ""
-        },
-        {
-            "key": "push_agent",
-            "name": "▶┃推送┃磁力",
-            "type": 3,
-            "api": "csp_Push",
-            "playerType": 1,
-            "searchable": 0,
-            "quickSearch": 0,
-            "filterable": 0,
-            "ext": "http://127.0.0.1:9978/file/TVBox/token.txt"
+            "ext": "./json/央视经典.json"
         }
     ],
     "parses": [
@@ -375,7 +316,7 @@
         {
             "name": "夜猫超聚合",
             "type": 1,
-            "url": "https://hd.396pay.cn/api/diy/?key=pFELnzclw6RdhxNlH6&url=",
+            "url": "https://hd.396pay.cn/lib/diy/?key=pFELnzclw6RdhxNlH6&url=",
             "ext": {
                 "flag": [
                     "qq",
@@ -525,7 +466,7 @@
         {
             "name": "腾讯专用",
             "type": "1",
-            "url": "https://api.8l2.cn/api/?key=5c9905a3dc0bef77647d1bb4a1d319ad&url=",
+            "url": "https://api.8l2.cn/lib/?key=5c9905a3dc0bef77647d1bb4a1d319ad&url=",
             "ext": {
                 "flag": [
                     "qq"
